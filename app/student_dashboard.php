@@ -9,4 +9,6 @@ if (!isset($_SESSION['username']) || $_SESSION['role'] !== 'student') {
 
 echo "<h1>Welcome, " . htmlspecialchars($_SESSION['username']) . " (Student)!</h1>";
 echo '<a href="logout.php">Logout</a>';
+echo '<a href="../submit_question.php">Submit Questions</a>';
+
 ?>
