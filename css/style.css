@@ -143,6 +143,9 @@ header nav a:hover {
     color: white; /* Maintain white text color */
     text-decoration: none; /* Ensure no underline appears on hover */
 }
+.back-button {
+    margin-left: 10px; /* Optional, to add spacing between buttons */
+}
 
 /* Form Styles for Submit Question */
 .form-container {

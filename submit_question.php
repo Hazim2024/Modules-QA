@@ -1,12 +1,18 @@
 <?php
 session_start();
 
-$isLoggedIn = isset($_SESSION['username']) && $_SESSION['role'] === 'student';
-
-if (!$isLoggedIn) {
-    $error = "You need to log in to use this feature.";
+// Check login status and roles
+if (isset($_SESSION['username'])) {
+    if ($_SESSION['role'] !== 'student') {
+        // User is logged in but not a student
+        $error = "You need to be a student to use this feature.";
+    }
+} else {
+    // User is not logged in
+    $error = "You need to log in as a student to use this feature.";
 }
 ?>
+
 
 <?php include('header.php'); ?>
 
@@ -26,6 +32,7 @@ if (!$isLoggedIn) {
             <div class="error-message"><?php echo htmlspecialchars($error); ?></div>
             <div class="button-container">
                 <a href="app/login.php" class="button">Go to Login</a>
+                <button onclick="history.back()" class="button back-button">Back</button>
             </div>
         <?php else: ?>
             <form action="app/submit_question.php" method="POST">
