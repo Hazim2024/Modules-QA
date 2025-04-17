@@ -118,6 +118,31 @@ header nav a:hover {
 .login-container button:hover {
     background-color: #1a4250;
 }
+/* Button style */
+.button-container {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 10vh; /* Make the container take the full viewport height */
+}
+.button {
+    padding: 12px;
+    background-color: #162938;
+    color: white;
+    border: none;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-radius: 5px;
+    display: inline-block; /* Makes it behave like a button */
+    text-align: center;    /* Centers the text */
+}
+
+.button:hover {
+    background-color: #1a4250; /* Optional: Add hover effect */
+    color: white; /* Maintain white text color */
+    text-decoration: none; /* Ensure no underline appears on hover */
+}
 
 /* Form Styles for Submit Question */
 .form-container {

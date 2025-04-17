@@ -24,7 +24,9 @@ if (!$isLoggedIn) {
 
         <?php if (isset($error)): ?>
             <div class="error-message"><?php echo htmlspecialchars($error); ?></div>
-            <a href="login.php" class="button">Go to Login</a>
+            <div class="button-container">
+                <a href="app/login.php" class="button">Go to Login</a>
+            </div>
         <?php else: ?>
             <form action="app/submit_question.php" method="POST">
                 <label for="username">Username:</label>
