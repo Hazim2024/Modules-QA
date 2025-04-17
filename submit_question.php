@@ -1,6 +1,7 @@
 <?php
 session_start();
 
+
 // Check login status and roles
 if (isset($_SESSION['username'])) {
     if ($_SESSION['role'] !== 'student') {
@@ -47,10 +48,10 @@ if (isset($_SESSION['username'])) {
                 </select>
 
                 <label for="title">Question Title:</label>
-                <input type="text" id="title" name="title" maxlength="100" required>
+                <input type="text" id="title" name="title" placeholder="Short title: e.g. ‘Trouble reading JSON file in PHP" maxlength="100" required>
 
                 <label for="question">Your Question:</label>
-                <textarea id="question" name="question" rows="5" required></textarea>
+                <textarea id="question" name="question" rows="5" placeholder="Explain your problem step by step so staff can help you best  " required></textarea>
 
                 <button type="submit">Submit</button>
             </form>
