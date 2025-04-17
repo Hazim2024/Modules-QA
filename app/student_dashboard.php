@@ -1,14 +1,29 @@
 <?php
 session_start();
 
-// Check if the user is logged in and is a student
 if (!isset($_SESSION['username']) || $_SESSION['role'] !== 'student') {
-    header("/index.html"); // Redirect to login if not logged in as a student
+    header("Location: ../index.html");
     exit;
 }
 
-echo "<h1>Welcome, " . htmlspecialchars($_SESSION['username']) . " (Student)!</h1>";
-echo '<a href="logout.php">Logout</a>';
-echo '<a href="../submit_question.php">Submit Questions</a>';
-
+$username = htmlspecialchars($_SESSION['username']);
+$pageTitle = "Student Dashboard";
+include('header.php');
 ?>
+
+<main>
+    <div class="container">
+        <h1>Welcome, <?php echo $username; ?>!</h1>
+        <p>Explore your dashboard features below:</p>
+        <a href="../submit_question.php">Submit Questions</a>
+        <a href="logout.php" onclick="return confirmLogout();">Logout</a>
+    </div>
+</main>
+
+<script>
+    function confirmLogout() {
+        return confirm("Are you sure you want to log out?");
+    }
+</script>
+
+<?php include('footer.php'); ?>
