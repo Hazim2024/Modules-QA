@@ -37,7 +37,7 @@
         </a>
       <?php else: ?>
         <!-- not logged in -->
-        <a href="index.html">Login</a>
+        <a href="app/login.php">Login</a>
       <?php endif; ?>
     </nav>
   </header>
