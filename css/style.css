@@ -1,98 +1,194 @@
-/* General styles */
+/* Global Styles */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
+    color: #fff;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    position: relative;
+    height: auto;
+    font-weight: 400;
+    background-color: #f4f7fa;
+}
+
+h1, h2 {
+    font-weight: 700;
+    color: #000000;
+}
+
+.title {
+    font-size: 2em;
+    color: #fff;
+    user-select: none;
+}
+.label-1 {
+    color: #162938; /* Change the color of the Username text */
+    font-size: 1em; /* Adjust the font size as needed */
+    font-weight: 500; /* Adjust the font weight if needed */
+    margin: 5px; /* Adjust the margin if needed */
+    top: 40%;
+}
+/* Header */
+header {
+    background-color: #162938;
+    padding: 15px 0;
+    color: white;
+}
+
+header nav {
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
+    gap: 30px;
 }
 
-/* Container for the form */
-.form-container {
-    background: #fff;
+header nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1em;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+header nav a:hover {
+    background-color: #fff;
+    color: #162938;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+/* Login Page */
+.login-container {
+    width: 100%;
+    max-width: 400px;
+    margin: 50px auto;
     padding: 20px;
+    background-color: white;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 400px;
-    max-width: 90%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Heading styles */
-h1 {
-    margin-bottom: 20px;
+.login-container h1 {
     text-align: center;
     font-size: 1.8em;
-    color: #333;
+    color: #162938;
 }
 
-/* Form layout */
-form {
+.login-container form {
     display: flex;
     flex-direction: column;
+    gap: 15px;
 }
 
-/* Label styles */
-label {
-    margin-bottom: 5px;
-    font-weight: bold;
-    color: #555;
-}
-
-/* Input fields */
-input, select, textarea {
-    margin-bottom: 15px;
+.login-container input {
     padding: 10px;
-    border: 1px solid #ddd;
     border-radius: 5px;
+    border: 1px solid #ccc;
     font-size: 1em;
-    width: 100%;
-    box-sizing: border-box;
 }
 
-/* Read-only input */
-input[readonly] {
-    background-color: #f9f9f9;
-    color: #888;
-    cursor: not-allowed;
-}
-
-/* Button styles */
-button {
-    background-color: #28a745;
+.login-container button {
+    padding: 12px;
+    background-color: #162938;
     color: white;
     border: none;
-    padding: 10px;
-    border-radius: 5px;
+    font-size: 1.1em;
     cursor: pointer;
+    transition: background-color 0.3s;
+    border-radius: 5px;
+}
+
+.login-container button:hover {
+    background-color: #1a4250;
+}
+
+/* Form Styles for Submit Question */
+.form-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-container h1 {
+    font-size: 1.8em;
+    color: #162938;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.form-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-container input, .form-container select, .form-container textarea {
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
     font-size: 1em;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
+    width: 100%;
 }
 
-button:hover {
-    background-color: #218838;
+.form-container button {
+    padding: 12px;
+    background-color: #162938;
+    color: white;
+    border: none;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-radius: 5px;
 }
 
-/* Textarea styling */
-textarea {
-    resize: vertical;
-    min-height: 80px;
+.form-container button:hover {
+    background-color: #1a4250;
 }
 
-/* Add responsiveness */
-@media (max-width: 600px) {
-    .form-container {
-        width: 100%;
-        padding: 15px;
-    }
+/* Footer Section */
+footer {
+    background-color: #162938;
+    color: white;
+    padding: 20px 0;
+    margin-top: 30px;
+}
 
-    h1 {
-        font-size: 1.5em;
-    }
+footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
 
-    button {
-        padding: 8px;
-    }
+footer .left {
+    font-size: 1em;
+}
+
+footer .title {
+    font-weight: 700;
+    font-size: 1.4em;
+}
+
+footer .socials {
+    display: flex;
+    gap: 15px;
+}
+
+footer .socials a {
+    color: white;
+    font-size: 1.5em;
+}
+
+footer .socials a:hover {
+    color: #1a4250;
+}
+
+/* Navigation link active styles */
+#Modules-link.active, #Submit-link.active, #View-link.active {
+    background-color: #fff;
+    color: #162938;
+    padding: 10px;
+    border-radius: 4px;
 }

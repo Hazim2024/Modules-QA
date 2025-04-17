@@ -9,6 +9,11 @@ if (!isset($_SESSION['username']) || $_SESSION['role'] !== 'student') {
 
 $username = $_SESSION['username']; // Get the logged-in username
 ?>
+<?php include('header.php'); ?>
+<?php if (isset($_SESSION['username'])): ?>
+    <p class="label-1">Welcome, <?php echo htmlspecialchars($_SESSION['username']); ?>!</p>
+<?php endif; ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -42,5 +47,6 @@ $username = $_SESSION['username']; // Get the logged-in username
         </form>
     </div>
 </body>
+<?php include('footer.php'); ?>
 
 </html>
