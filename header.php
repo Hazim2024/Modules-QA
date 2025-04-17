@@ -22,13 +22,11 @@
   <header>
     <h2 class="title">LJMU Module Q&A</h2>
     <nav class="navigation">
-      <a href="main.php">Home</a>
-
-      <?php if (isset($_SESSION['username'])): ?>
+        <a href="main.php">Home</a>
+        <a href="submit_question.php">Submit Question</a>
+        <?php if (isset($_SESSION['username'])): ?>
         <!-- student only -->
-        <?php if ($_SESSION['role'] === 'student'): ?>
-          <a href="submit_question.php">Submit Question</a>
-        <?php endif; ?>
+        
 
         <!-- everyone logged in -->
         <a href="app/logout.php"
