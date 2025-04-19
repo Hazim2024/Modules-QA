@@ -236,44 +236,78 @@ header {
     background-color: #1a4250;
 }
 
-/* Footer Section */
+/* Footer */
 footer {
-    background-color: #162938;
-    color: white;
-    padding: 20px 0;
-    margin-top: 30px;
+    background: linear-gradient(to bottom, #162938 0%, #162938 50%, #162938 100%);
+    color: #fff;
+    padding-top: 10px;
 }
 
-footer .container {
+footer a {
+    color: #fff;
+}
+
+footer .content {
     display: flex;
     justify-content: space-between;
+}
+
+footer .left p {
+    margin-top: 0;
+}
+
+footer .right {
+    display: flex;
+    gap: 40px;
+}
+
+footer h3 {
+    margin-top: 0;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+footer ul li {
+    margin: 8px 0;
+}
+
+footer .copyright {
+    border-top: 1px solid rgba(255, 255,255, 0.4);
+    display: flex;
     align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-footer .left {
-    font-size: 1em;
-}
-
-footer .title {
-    font-weight: 700;
-    font-size: 1.4em;
+    justify-content: space-between;
+    padding: 20px 0;
 }
 
 footer .socials {
     display: flex;
-    gap: 15px;
+    gap: 40px;
 }
 
-footer .socials a {
-    color: white;
-    font-size: 1.5em;
+.socials a {
+    margin: 0 5px; /* Space between icons */
+    color: white; /* Icon color */
+    text-decoration: none;
 }
 
-footer .socials a:hover {
-    color: #1a4250;
+.socials ion-icon {
+    font-size: 30px; 
+    transition: transform 0.2s; 
 }
+.quick-links-title {
+    font-size: 20px; 
+    font-weight: bold; 
+    margin-bottom: 10px; 
+    text-align: left;
+}
+
+.socials ion-icon:hover {
+    transform: scale(1.1); 
+}
+
 
 /* Navigation link active styles */
 #Modules-link.active, #Submit-link.active, #View-link.active {

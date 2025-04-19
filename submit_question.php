@@ -17,15 +17,8 @@ if (isset($_SESSION['username'])) {
 
 <?php include('header.php'); ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Submit a Question</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
+
+<main>
     <div class="form-container">
         <h1>Submit a Question</h1>
 
@@ -57,6 +50,6 @@ if (isset($_SESSION['username'])) {
             </form>
         <?php endif; ?>
     </div>
-</body>
+        </main>
 <?php include('footer.php'); ?>
-</html>
+
