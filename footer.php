@@ -1,7 +1,3 @@
-<?php if (isset($_SESSION['username'])): ?>
-    <p>Welcome, <?php echo htmlspecialchars($_SESSION['username']); ?>!</p>
-<?php endif; ?>
-
 <footer>
         <div class="container">
             <div class="content">
