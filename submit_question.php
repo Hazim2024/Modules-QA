@@ -52,4 +52,4 @@ if (isset($_SESSION['username'])) {
     </div>
         </main>
 <?php include('footer.php'); ?>
-
+<script src="js/script.js"></script>

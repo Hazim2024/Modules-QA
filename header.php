@@ -26,6 +26,7 @@
       <ul class="nav_list">
         <a href="main.php" class="nav_link">Home</a>
         <a href="submit_question.php" class="nav_link">Submit Question</a>
+        <a href="view_question.php" class="nav_link">View Questions</a>
         <?php if (isset($_SESSION['username'])): ?>
         <!-- student only -->
         
@@ -44,4 +45,4 @@
       <div class="bar"></div>
     </div>
   </header>
-  <script src="js/script.js"></script>
+  
