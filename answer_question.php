@@ -33,15 +33,15 @@ include 'header.php';
     <h1>Answer Question</h1>
 
     <div class="card mb-4">
-      <div class="card-header custom-header">
-        <strong><?= htmlspecialchars($q['module']) ?></strong>
-        <span class="badge badge-<?= $q['status']==='unanswered' ? 'warning' : 'success' ?>">
-          <?= ucfirst($q['status']) ?>
-        </span>
+      <div class="question-card-header">
+                <span class="module-badge"><?= htmlspecialchars($q['module']) ?></span>
+                <span class="status-badge <?= $q['status'] === 'unanswered' ? 'unanswered' : 'answered' ?>">
+                    <?= ucfirst($q['status']) ?>
+                </span>
       </div>
       <div class="card-body">
-        <h5 class="card-title"><?= htmlspecialchars($q['title']) ?></h5>
-        <p><?= nl2br(htmlspecialchars($q['question_text'])) ?></p>
+        <h2 class="question-title"><?= htmlspecialchars($q['title']) ?></h2>
+        <p class="question-text"><?= nl2br(htmlspecialchars($q['question_text'])) ?></p>
         <small class="text-muted">
           Asked by <?= htmlspecialchars($q['username']) ?>
           on <?= htmlspecialchars($q['created_at']) ?>
@@ -67,3 +67,4 @@ include 'header.php';
 </main>
 
 <?php include 'footer.php'; ?>
+<script src="js/script.js"></script>
