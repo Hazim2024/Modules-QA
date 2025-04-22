@@ -61,7 +61,7 @@ include 'header.php';
           required></textarea>
       </div>
       <button type="submit" class="btn btn-primary">Post Answer</button>
-      <a href="view_questions.php" class="btn btn-secondary">Cancel</a>
+      <a href="view_question.php" class="btn btn-secondary">Cancel</a>
     </form>
   </div>
 </main>
