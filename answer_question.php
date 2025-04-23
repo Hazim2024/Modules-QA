@@ -20,11 +20,11 @@ $stmt->bind_param('i', $id);
 $stmt->execute();
 $q = $stmt->get_result()->fetch_assoc();
 if (!$q) {
-  die("Question not found");
+  die("Question not found");//error page or redirect to main page 
 }
 $stmt->close();
 
-$pageTitle = "Answer: " . htmlspecialchars($q['title']);
+$pageTitle = "Answer Question"; 
 include 'header.php';
 ?>
 
@@ -32,37 +32,38 @@ include 'header.php';
   <div class="container form-container">
     <h1>Answer Question</h1>
 
-    <div class="card mb-4">
+    <div class="question-card mb-4">
       <div class="question-card-header">
                 <span class="module-badge"><?= htmlspecialchars($q['module']) ?></span>
                 <span class="status-badge <?= $q['status'] === 'unanswered' ? 'unanswered' : 'answered' ?>">
                     <?= ucfirst($q['status']) ?>
                 </span>
       </div>
+
       <div class="card-body">
         <h2 class="question-title"><?= htmlspecialchars($q['title']) ?></h2>
         <p class="question-text"><?= nl2br(htmlspecialchars($q['question_text'])) ?></p>
-        <small class="text-muted">
+        <small class="question-meta">
           Asked by <?= htmlspecialchars($q['username']) ?>
           on <?= htmlspecialchars($q['created_at']) ?>
         </small>
       </div>
+
     </div>
 
+    
     <form action="app/answer_question.php" method="POST">
       <input type="hidden" name="question_id" value="<?= $id ?>">
+
       <div class="form-group">
         <label for="answer_text">Your Answer</label>
-        <textarea
-          id="answer_text"
-          name="answer_text"
-          class="form-control"
-          rows="6"
-          required></textarea>
+        <textarea id="answer_text" name="answer_text" class="form-control" rows="5" required></textarea>
       </div>
+      
       <button type="submit" class="btn btn-primary">Post Answer</button>
       <a href="view_question.php" class="btn btn-secondary">Cancel</a>
     </form>
+    
   </div>
 </main>
 

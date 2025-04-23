@@ -12,7 +12,7 @@ if ($filter === 'unanswered') {
 }
 
 // 2) Fetch
-$sql    = "SELECT * FROM questions
+$sql="SELECT * FROM questions
            $where
            ORDER BY votes DESC, created_at DESC";
 $result = $conn->query($sql);
@@ -29,11 +29,7 @@ include 'header.php';
   <div class="questions-container">
     <!-- ——— LIVE SEARCH ——— -->
     <div class="mb-4 text-center">
-      <input
-        type="text"
-        id="search-input"
-        placeholder="Search questions…"
-        class="form-control w-50 d-inline-block">
+      <input type="text" id="search-input" placeholder="Search questions…" class="form-control w-50 d-inline-block">
     </div>
 
     <!-- ——— FILTER PILLS ——— -->
@@ -55,12 +51,14 @@ include 'header.php';
       <?php while ($q = $result->fetch_assoc()): ?>
         <div class="question-column">
           <div class="question-card">
+
             <div class="question-card-header">
               <span class="module-badge"><?= htmlspecialchars($q['module']) ?></span>
               <span class="status-badge <?= $q['status'] === 'unanswered' ? 'unanswered' : 'answered' ?>">
                 <?= ucfirst(htmlspecialchars($q['status'])) ?>
               </span>
             </div>
+
             <div class="question-card-body">
               <h2 class="question-title"><?= htmlspecialchars($q['title']) ?></h2>
               <p class="question-text"><?= nl2br(htmlspecialchars($q['question_text'])) ?></p>
@@ -69,6 +67,7 @@ include 'header.php';
                 on <?= htmlspecialchars($q['created_at']) ?>
               </small>
             </div>
+            
             <div class="question-card-footer">
               <button
                 class="vote-button<?= isset($hasVoted) && $hasVoted ? ' voted' : '' ?>"
