@@ -541,4 +541,20 @@ footer .socials {
     color: #333;
     border-color: #e0a800;
   }
+
+
+/* when showing an answer-card immediately after a question-card, add some space */
+.answer-card {
+  margin-top: 1.5rem;    /* gap above answers */
+}
+
+/* center the header text in any .question-card-header (including answers) */
+.question-card-headeri {
+  background: #162938;
+  color: #fff;
+  padding: 0.75rem 1rem;
+  justify-content: space-between;
+  text-align: center;
+  font-weight: bold;
   
+}
