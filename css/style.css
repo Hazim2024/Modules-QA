@@ -536,6 +536,22 @@ footer .socials {
   background: #0056b3;
 }
 
+/* right next to .answer-button rules */
+
+.view-button {
+  background: #6c757d;       /* a neutral grey */
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  transition: background 0.3s;
+}
+.view-button:hover {
+  background: #5a6268;
+}
+
+
 .vote-button.voted {
     background-color: #ffc107;
     color: #333;

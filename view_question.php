@@ -78,6 +78,9 @@ include 'header.php';
               <?php if (!empty($_SESSION['role']) && $_SESSION['role'] === 'staff'): ?>
                 <a href="answer_question.php?id=<?= (int)$q['id'] ?>"
                    class="answer-button">Answer</a>
+              <?php else: ?>
+                <a href="answer_question.php?id=<?= (int)$q['id'] ?>"
+                    class="view-button">View</a>
               <?php endif; ?>
             </div>
           </div>
