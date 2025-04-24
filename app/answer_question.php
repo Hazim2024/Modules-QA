@@ -42,6 +42,5 @@ $upd->execute();
 $upd->close();
 
 // 5) feedback + redirect back to view
-$_SESSION['success'] = "Answer posted!";
-header("Location: ../view_questions.php?filter=answered");
+header("Location: ../answer_question.php?id=" . $qid);
 exit;

@@ -545,7 +545,8 @@ footer .socials {
 
 /* when showing an answer-card immediately after a question-card, add some space */
 .answer-card {
-  margin-top: 1.5rem;    /* gap above answers */
+  margin-top: 4.5rem;    /* gap above answers */
+  margin-bottom: 1.5rem; /* gap below answers */
 }
 
 /* center the header text in any .question-card-header (including answers) */
@@ -558,3 +559,18 @@ footer .socials {
   font-weight: bold;
   
 }
+
+.question-card-body {
+  padding: 1rem;
+  flex: 1; /* push footer down */
+  margin-top: 0.5rem;               /* optional spacing above */
+}
+
+.answer-divider {
+  border: none;
+  border-top: 1px solid #ddd;
+  margin: 1rem 0;
+}
+
+
+

@@ -67,7 +67,7 @@ include 'header.php';
                 on <?= htmlspecialchars($q['created_at']) ?>
               </small>
             </div>
-            
+
             <div class="question-card-footer">
               <button
                 class="vote-button<?= isset($hasVoted) && $hasVoted ? ' voted' : '' ?>"
@@ -75,7 +75,7 @@ include 'header.php';
                 ▲ <?= (int)$q['votes'] ?>
               </button>
 
-              <?php if (!empty($_SESSION['role']) && $_SESSION['role'] === 'staff' && $q['status'] === 'unanswered'): ?>
+              <?php if (!empty($_SESSION['role']) && $_SESSION['role'] === 'staff'): ?>
                 <a href="answer_question.php?id=<?= (int)$q['id'] ?>"
                    class="answer-button">Answer</a>
               <?php endif; ?>

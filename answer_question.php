@@ -1,10 +1,6 @@
 <?php
 session_start();
-// staff‐only guard
-if (empty($_SESSION['username']) || $_SESSION['role']!=='staff') {
-  header('Location: main.php');
-  exit;
-}
+
 
 require_once __DIR__ . '/app/db_connect.php';
 
@@ -59,6 +55,8 @@ include 'header.php';
         $r->execute();
         $answers = $r->get_result();
         $r->close();
+        $remaining = $answers->num_rows;
+
       ?>
       
       <div class="question-card answer-card">               <!-- same as question-card -->
@@ -73,6 +71,12 @@ include 'header.php';
               by <?= htmlspecialchars($a['username']) ?> on <?= htmlspecialchars($a['created_at']) ?>
               </small>
             </blockquote>
+            <?php 
+              $remaining--;
+              if($remaining > 0):  // only print divider if there are more answers coming
+            ?>
+              <hr class="answer-divider">
+            <?php endif; ?>
           <?php endwhile; ?>
         </div>
       </div>
@@ -80,15 +84,18 @@ include 'header.php';
 
 
     <!-- answer form -->
-    <form action="app/answer_question.php" method="POST">
-      <input type="hidden" name="question_id" value="<?= $id ?>">
-      <div class="form-group">
-        <label for="answer_text">Your Answer</label>
-        <textarea id="answer_text" name="answer_text" class="form-control" rows="5" required></textarea>
-      </div>
-      <button type="submit" class="btn btn-primary">Post Answer</button>
-      <a href="view_question.php" class="btn btn-secondary">Cancel</a>
-    </form>
+    <?php if  ($_SESSION['role'] === 'staff'): ?>
+      <form action="app/answer_question.php" method="POST">
+        <input type="hidden" name="question_id" value="<?= $id ?>">
+        <div class="form-group">
+          <label for="answer_text">Your Answer</label>
+          <textarea id="answer_text" name="answer_text" class="form-control" rows="5" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Post Answer</button>
+        <a href="view_question.php" class="btn btn-secondary">Cancel</a>
+      </form>
+    <?php endif; ?>
+    
 
   </div>
 </main>

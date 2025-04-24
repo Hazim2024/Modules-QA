@@ -8,7 +8,13 @@ include('header.php'); ?>
 <main>
 
     <div class="container-fluid">
-        <h1>Welcome to the Home Page</h1>
+        
+        <?php if (!empty($_SESSION['username'])): ?>
+        <h1>
+            Welcome, <?= htmlspecialchars($_SESSION['username']) ?>!
+        </h1>
+        <?php endif; ?>
+        
         <p class="label-1">This is the main content of the home page.</p>
         <p class="label-1">This is the main content of the home page.</p>
         <p class="label-1">This is the main content of the home page.</p>
