@@ -517,23 +517,28 @@ footer .socials {
   font-size: 0.9rem;
   cursor: pointer;
   transition: background 0.3s;
+  transition: transform 0.2s;
 }
 .vote-button:hover {
   background: #218838;
+  transform: scale(1.1);
 }
 
 /* Answer link */
 .answer-button {
-  background: #007bff;
+  background: #162938;
   color: #fff;
-  text-decoration: none;
   border-radius: 4px;
   padding: 0.5rem 1rem;
   font-size: 0.9rem;
   transition: background 0.3s;
+  transition: transform 0.2s;
 }
 .answer-button:hover {
-  background: #0056b3;
+  background: #031422;
+  color: white; /* Maintain white text color */
+  text-decoration: none; /* Ensure no underline appears on hover */
+  transform: scale(1.1);
 }
 
 /* right next to .answer-button rules */
@@ -546,9 +551,11 @@ footer .socials {
   padding: 0.5rem 1rem;
   font-size: 0.9rem;
   transition: background 0.3s;
+  transition: transform 0.2s;
 }
 .view-button:hover {
   background: #5a6268;
+  transform: scale(1.1);
 }
 
 
