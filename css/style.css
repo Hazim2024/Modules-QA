@@ -598,5 +598,21 @@ footer .socials {
   margin: 1rem 0;
 }
 
+.back-button-student {
+  display: block;
+  width: 100%;
+  padding: 0.5rem 1rem;      /* match your .btn padding */
+  font-size: 1rem;           /* match your .btn font-size */
+  text-align: center;
+  background-color: #6c757d;  /* bootstrap secondary bg */
+  color: #fff;               /* bootstrap secondary text */
+  border: 1px solid #6c757d; /* bootstrap secondary border */
+  border-radius: 0.25rem;    /* bootstrap btn border-radius */
+  cursor: pointer;
+}
+.back-button-student:hover {
+  background-color: #5a6268;
+  border-color: #545b62;
+}
 
 

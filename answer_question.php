@@ -94,6 +94,9 @@ include 'header.php';
         <button type="submit" class="btn btn-primary">Post Answer</button>
         <a href="view_question.php" class="btn btn-secondary">Cancel</a>
       </form>
+      <?php else: ?>
+        <p class="alert alert-warning">You need to be a staff member to answer questions.</p>
+        <button onclick="history.back()" class="button back-button-student">Back</button>
     <?php endif; ?>
     
 
