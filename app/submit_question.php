@@ -10,29 +10,45 @@ if (!isset($_SESSION['username']) || $_SESSION['role'] !== 'student') {
     exit;
 }
 
+// 2) load banned words
+$banned = [];
+foreach (file(__DIR__ . '/../data/banned_words.txt', FILE_IGNORE_NEW_LINES|FILE_SKIP_EMPTY_LINES) as $line) {
+  $line = trim($line);
+  if ($line === '' || $line[0] === '#') {
+    continue;
+  }
+  $banned[] = preg_quote($line, '/');
+}
 
+// 3) check for banned words
+$haystack = ($_POST['title'] ?? '') . "\n" . ($_POST['question'] ?? '');
+$pattern = '/\b(' . implode('|', $banned) . ')\b/i';
+if (preg_match($pattern, $haystack)) {
+    $_SESSION['error'] = "Your question contains forbidden keywords.";
+    header("Location: ../submit_question.php");
+    exit;
+}
+
+// 4) insert into database
 $stmt = $conn->prepare(
-    "INSERT INTO questions (username, module, title, question_text)
-    VALUES (?, ?, ?, ?)"
+  "INSERT INTO questions (username,module,title,question_text)
+   VALUES (?, ?, ?, ?)"
 );
 $stmt->bind_param(
-    'ssss',
-     $_SESSION['username'],
-    $_POST['module'],
-    $_POST['title'],
-    $_POST['question']
+  'ssss',
+  $_SESSION['username'],
+  $_POST['module'],
+  $_POST['title'],
+  $_POST['question']
 );
 $stmt->execute();
-
-// 3) grab the auto‐increment ID of the row we just inserted
 $newQid = $conn->insert_id;
-
 $stmt->close();
 
-// 4) set flash and last_qid
+// 5) flash success + remember new id
 $_SESSION['success']  = "Question submitted!";
 $_SESSION['last_qid'] = $newQid;
 
-// 5) redirect back to the form page
+// 6) redirect back
 header("Location: ../submit_question.php");
 exit;
