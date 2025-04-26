@@ -35,9 +35,11 @@ if (isset($_SESSION['username'])) {
 
                 <label for="module">Module:</label>
                 <select id="module" name="module" required>
-                    <option value="Math">Math</option>
-                    <option value="Science">Science</option>
-                    <option value="History">History</option>
+                    <option value="Mobile and Web Dev">Mobile and Web Development</option>
+                    <option value="Programming in Java">Programming in Java</option>
+                    <option value="Computer System Architecture">Computer System Architecture</option>
+                    <option value="Advance AI">Advance AI</option>
+                    <option value="Data Modelliing">Data Modelliing</option>
                 </select>
 
                 <label for="title">Question Title:</label>
