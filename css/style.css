@@ -558,7 +558,7 @@ footer .socials {
 /* right next to .answer-button rules */
 
 .view-button {
-  background: #6c757d;       /* a neutral grey */
+  background: #162938;       /* a neutral grey */
   color: #fff;
   border-radius: 4px;
   padding: 0.5rem 1rem;
@@ -567,7 +567,7 @@ footer .socials {
   transition: transform 0.2s;
 }
 .view-button:hover {
-  background: #5a6268;
+  background: #031422;
   transform: scale(1.1);
   color: white; /* Maintain white text color */
   text-decoration: none; /* Ensure no underline appears on hover */
