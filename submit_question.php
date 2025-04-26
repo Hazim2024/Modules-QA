@@ -29,6 +29,17 @@ if (isset($_SESSION['username'])) {
                 <button onclick="history.back()" class="button back-button">Back</button>
             </div>
         <?php else: ?>
+
+        <?php if (!empty($_SESSION['success'])): ?>
+            <div class="success-message"> Question submitted! <a href="answer_question.php?id=<?= (int)$_SESSION['last_qid'] ?>">View your question</a> </div>
+            <?php unset($_SESSION['success'], $_SESSION['last_qid']); ?>
+        <?php elseif (!empty($_SESSION['error'])): ?>
+            <div class="error-message">
+                <?= htmlspecialchars($_SESSION['error']) ?>
+            </div>
+            <?php unset($_SESSION['error']); ?>
+        <?php endif; ?>
+            
             <form action="app/submit_question.php" method="POST">
                 <label for="username">Username:</label>
                 <input type="text" id="username" name="username" value="<?php echo htmlspecialchars($_SESSION['username']); ?>" readonly>
@@ -49,6 +60,7 @@ if (isset($_SESSION['username'])) {
                 <textarea id="question" name="question" rows="5" placeholder="Explain your problem step by step so staff can help you best  " required></textarea>
 
                 <button type="submit">Submit</button>
+                <button onclick="history.back()" class="button back-button-student">Back</button>
             </form>
         <?php endif; ?>
     </div>
